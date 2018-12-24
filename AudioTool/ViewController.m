@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "AudioRecordAndPlayVC.h"
 
 @interface ViewController ()
 
@@ -16,8 +17,18 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.title = @"AudioTool";
+    UIButton *recordAndPlayBtn = [[UIButton alloc] init];
+    [recordAndPlayBtn setTitle:@"音频录制和播放" forState:UIControlStateNormal];
+    [recordAndPlayBtn setTitleColor:[UIColor orangeColor] forState:UIControlStateNormal];
+    [recordAndPlayBtn addTarget:self action:@selector(recordAndPlay) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:recordAndPlayBtn];
+    [recordAndPlayBtn makeConstraints:^(MASConstraintMaker *make) {
+        make.center.offset(0);
+    }];
+    
 }
-
-
+-(void)recordAndPlay{
+    [self.navigationController pushViewController:[[AudioRecordAndPlayVC alloc] init] animated:YES];
+}
 @end

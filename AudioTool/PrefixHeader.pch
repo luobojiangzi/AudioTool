@@ -1,0 +1,76 @@
+//
+//  PrefixHeader.pch
+//  AudioTool
+//
+//  Created by zhihuili on 2018/12/23.
+//  Copyright © 2018 智慧  李. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+#define MAS_SHORTHAND
+#define MAS_SHORTHAND_GLOBALS
+
+#define KLineWidth 0.5
+#define HEIGHT [UIScreen mainScreen].bounds.size.height
+#define WIDTH [UIScreen mainScreen].bounds.size.width
+#define FONT_TEXT(x) WIDTH/375.0*x
+#define KImageNamed(_pointer) [UIImage imageNamed:_pointer]
+#define KFont_S(fon) [UIFont systemFontOfSize:fon* KSCREEN_W_POINT]
+#define KFont_B(fon) [UIFont boldSystemFontOfSize:fon* KSCREEN_W_POINT]
+#define KColorHex(hexString) [UIColor colorWithHexString:hexString]
+
+#ifndef weakify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define weakify(object) autoreleasepool{} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) autoreleasepool{} __block __typeof__(object) block##_##object = object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define weakify(object) try{} @finally{} {} __weak __typeof__(object) weak##_##object = object;
+#else
+#define weakify(object) try{} @finally{} {} __block __typeof__(object) block##_##object = object;
+#endif
+#endif
+#endif
+
+#ifndef strongify
+#if DEBUG
+#if __has_feature(objc_arc)
+#define strongify(object) autoreleasepool{} __typeof__(object) object = weak##_##object;
+#else
+#define strongify(object) autoreleasepool{} __typeof__(object) object = block##_##object;
+#endif
+#else
+#if __has_feature(objc_arc)
+#define strongify(object) try{} @finally{} __typeof__(object) object = weak##_##object;
+#else
+#define strongify(object) try{} @finally{} __typeof__(object) object = block##_##object;
+#endif
+#endif
+#endif
+
+
+
+#import "NSString+Add.h"
+#import "UIColor+Add.h"
+#import "UIButton+Add.h"
+#import "UILabel+Add.h"
+#import "UIImageView+WebCache.h"
+#import "UIButton+WebCache.h"
+#import "MBProgressHUD+MS.h"
+#import "MJRefresh.h"
+#import "Masonry.h"
+#import "AFNetworking.h"
+#import "NetService.h"
+
+//音频录制播放工具类
+#import "AudioTool.h"
+//录音UI
+#import "RecordVoiceView.h"
+
+
+#endif /* PrefixHeader_pch */
