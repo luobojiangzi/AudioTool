@@ -10,6 +10,7 @@
 ![trend.gif](https://upload-images.jianshu.io/upload_images/1741974-77c76698ca3b5e0d.gif?imageMogr2/auto-orient/strip)
 
 
+
 **iOS端我们录制的是wav格式，安卓端是mar格式，我们做了妥协，上传的时候wav格式转换成mar，然后下载的时候还mar转成wav再播放**
 * **音频录制和播放功能**
 * **音频iOS和安卓格式问题**
