@@ -16,11 +16,6 @@
 ![80BCEBAF-B299-49E3-A5F4-45AE37842082.png](https://upload-images.jianshu.io/upload_images/1741974-4ef9038b6c3f0cb8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 还有一些常见问题可以参考(https://blog.csdn.net/zhdzxc123/article/details/52879921)
 
-当时做的动态浏览 音视频播放，图片浏览，评论功能
-
-![trend.gif](https://upload-images.jianshu.io/upload_images/1741974-77c76698ca3b5e0d.gif?imageMogr2/auto-orient/strip)
-
-
 ###在使用中如有任何问题欢迎骚扰我,如果对你有帮助请点帮我一个✨,小弟感激不尽
 
 ###联系我
